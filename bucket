@@ -1,15 +1,15 @@
 apiVersion: storage.gcp.crossplane.io/v1alpha3
 kind: Bucket
 metadata:
-  name: example
+  name: example2
   labels:
     example: "true"
   annotations:
     # Note that this will be the actual bucket name so it has to be globally unique/available.
-    crossplane.io/external-name: crossplane-google-bucket-br-fc
+    crossplane.io/external-name: crossplane-example-bucket-fc-br2
 spec:
   location: US
   storageClass: MULTI_REGIONAL
   providerConfigRef:
-    name: gcp-provider
+    name: default
   deletionPolicy: Delete
