@@ -1,0 +1,16 @@
+apiVersion: storage.gcp.crossplane.io/v1alpha3
+kind: Bucket
+metadata:
+  name: examplo3
+  labels:
+    example: "true"
+  annotations:
+    # Note that this will be the actual bucket name so it has to be 
+globally unique/available.
+    crossplane.io/external-name: crossplane-example-bucket-fc-br3
+spec:
+  location: US
+  storageClass: MULTI_REGIONAL
+  providerConfigRef:
+    name: default
+  deletionPolicy: Delete
